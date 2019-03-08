@@ -10,7 +10,7 @@ def confirm_move(board:dict) -> int:
     """Ask the player to make a legal move"""
     while True:
         try:
-            move = int(input('Choose a space to move: '))
+            move = int(input('Choose an available space (1-9): '))
         except ValueError:
             continue
         if not allow_move(move, board):
