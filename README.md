@@ -2,7 +2,7 @@
 
 Created this module as part of my Python Bootcamp
 
-To play the game, clone the repo and run the following in your terminal
+To play the game, clone the repo and run the following in the terminal
 
 ```
 $ python -m tic_tac_toe
