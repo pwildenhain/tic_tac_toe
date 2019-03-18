@@ -18,15 +18,13 @@ def play_tic_tac_toe():
         board[move] = player
 
         winner_found = winner.check_for_win(board, win_conditions)
-        tie_found = winner.check_for_tie(board)
-        if winner_found or tie_found:
+        if winner_found or winner.check_for_tie(board):
             if winner_found:
                 print(f"{player}'s win! Woot Woot!")
             else:
                 print("Aw shucks, it's a tie...")
             game_board.print_game_board(board)
-            rematch = user_input.confirm_rematch()
-            if rematch:
+            if user_input.confirm_rematch():
                 board = game_board.create_empty_game_board()
                 player = 'X'
                 continue

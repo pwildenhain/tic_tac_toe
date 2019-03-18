@@ -8,15 +8,12 @@ def allow_move(move:int, board:dict) -> int:
 
 def confirm_move(board:dict) -> int:
     """Ask the player to make a legal move"""
-    while True:
+    move = 0
+    while not allow_move(move, board):
         try:
             move = int(input('Choose an available space (1-9): '))
         except ValueError:
             continue
-        if not allow_move(move, board):
-            continue
-        else:
-            break
     return move
 
 def confirm_rematch() -> bool:

@@ -7,7 +7,8 @@ def check_for_win(board:dict, win_conditions:list) -> bool:
         space_values = [board.get(space) for space in spaces]
         # Remove empty spaces
         space_values = list(filter(lambda space:space != ' ', space_values))
-        if len(space_values) == 0:
+        # Skip the check if not all the spaces are filled
+        if len(space_values) < 3:
             continue
         all_equal = space_values.count(space_values[0]) == 3
         if all_equal:
